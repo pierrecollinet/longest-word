@@ -1,2 +1,4 @@
 # Procfile
-web: gunicorn wsgi:longest-word
+web: gunicorn longest-word.wsgi
+
+
