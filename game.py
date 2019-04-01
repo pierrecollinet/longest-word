@@ -1,6 +1,7 @@
 # game.py
 import string
 import random
+import requests
 
 class Game:
     def __init__(self):
@@ -17,4 +18,6 @@ class Game:
                 letters.remove(letter)
             else:
                 return False
-        return True
+        r = requests.get(f"https://wagon-dictionary.herokuapp.com/{word}", auth=('user', 'pass'))
+        response = r.json()
+        return response['found']
