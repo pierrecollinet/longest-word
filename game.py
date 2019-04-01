@@ -18,6 +18,6 @@ class Game:
                 letters.remove(letter)
             else:
                 return False
-        r = requests.get(f"https://wagon-dictionary.herokuapp.com/{word}", auth=('user', 'pass'))
+        r = requests.get(f"https://wagon-dictionary.herokuapp.com/{word}")
         response = r.json()
         return response['found']
